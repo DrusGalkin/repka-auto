@@ -1,0 +1,30 @@
+{
+  "name": "repka-auto",
+  "version": "1.0.0",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test protocol.test.cjs",
+    "preandroid": "node prepare-native.mjs android",
+    "preios": "node prepare-native.mjs ios",
+    "prebuild:android": "node prepare-native.mjs android && expo prebuild --platform android --no-install"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "expo": "55.0.32",
+    "expo-dev-client": "~55.0.41",
+    "expo-system-ui": "~55.0.22",
+    "react": "19.2.0",
+    "react-native": "0.83.10",
+    "react-native-ble-plx": "3.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.10",
+    "typescript": "~5.9.2"
+  },
+  "type": "module"
+}

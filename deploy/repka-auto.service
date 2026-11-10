@@ -1,0 +1,23 @@
+[Unit]
+Description=Repka Auto OBD2 dashboard and BLE
+After=bluetooth.service
+Wants=bluetooth.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=repka-auto
+Group=repka-auto
+SupplementaryGroups=dialout
+WorkingDirectory=/opt/repka-auto/service
+EnvironmentFile=-/etc/repka-auto.env
+ExecStart=/opt/repka-auto/.venv/bin/python /opt/repka-auto/service/main.py
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

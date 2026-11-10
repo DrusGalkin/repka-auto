@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Repka Auto",
+    "slug": "repka-auto",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "bundleIdentifier": "com.repka.auto",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "Подключение к бортовому компьютеру Repka Pi"
+      }
+    },
+    "android": {
+      "package": "com.repka.auto",
+      "permissions": [
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": false,
+          "bluetoothAlwaysPermission": "Подключение к бортовому компьютеру Repka Pi"
+        }
+      ]
+    ]
+  }
+}
